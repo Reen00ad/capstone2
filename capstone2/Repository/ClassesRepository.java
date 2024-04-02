@@ -17,9 +17,11 @@ public interface ClassesRepository extends JpaRepository<Classes,Integer> {
     Classes findClassesById(Integer id);
 
 
-    List<Classes> findClassesByCapacity(Integer capacity);
+    @Query("select c from Classes c where c.capacity=0")
+    List<Classes> findClassesByCapacity();
 
-    List<Classes> findClassesByCapacityGreaterThanEqual(Integer capacity);
+     @Query("select c from Classes c where c.capacity >= 1")
+    List<Classes> findClassesByCapacityGreaterThanEqual();
 
 
 
