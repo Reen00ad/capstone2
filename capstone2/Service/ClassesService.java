@@ -71,15 +71,14 @@ public class ClassesService {
     }
     public List<Classes> getFullyBooked(){
 
-        Integer capacity=0;
-
-        return classesRepository.findClassesByCapacity(capacity);
+    
+        return classesRepository.findClassesByCapacity();
     }
 
     public List<Classes> getAvailableClasses(){
-        Integer capacity=1;
+        
 
-        return classesRepository.findClassesByCapacityGreaterThanEqual(capacity);
+        return classesRepository.findClassesByCapacityGreaterThanEqual();
     }
 
 
